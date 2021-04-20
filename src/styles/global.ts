@@ -2,9 +2,9 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
     :root {
+        --text: #71717a;
         --background: #fff;
         --shape: #f0f2f5;
-        --text: #71717a;
         --green: #22c55e;
         --blue: #2563eb;
         --dark-blue: #1e3a8a;
@@ -24,6 +24,7 @@ export default createGlobalStyle`
     }
 
     body{
+        font-family: 'Poppins', sans-serif;
         background: var(--background);
         --webkit-font-smoothing: antialiased; 
     }
@@ -47,7 +48,7 @@ export default createGlobalStyle`
         opacity: 0.6;
         cursor: not-allowed;
     }
-    
+
     // ANIMATIONS
     @keyframes appearing-from-right {
         0% {

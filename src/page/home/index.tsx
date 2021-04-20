@@ -1,5 +1,11 @@
+import Header from "../../component/Header/index";
+
 import { Container } from "./styles";
 
-export function home() {
-  return <Container>teste</Container>;
+export default function home() {
+  return (
+    <Container>
+      <Header name="Vandson de Sousa Falcão" />
+    </Container>
+  );
 }
