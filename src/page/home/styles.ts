@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
-
     display: flex;
     flex-direction: column;
-
-    
+    ul{
+        list-style: none;
+    }
+    button {
+        background: transparent;
+        border: 0
+    }
 `;

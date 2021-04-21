@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-    flex: 1;
     display: flex;
     flex-direction:column;
-    height: 100vh;
 `;
 
-export const Tab = styled.main`
+export const Tab = styled.section`
     display: flex;
     justify-content: space-between;
 
@@ -15,46 +13,36 @@ export const Tab = styled.main`
     >div {
         display: flex;
         align-items: center;
-        padding: 0 1rem;
-        column-gap: 0.875rem;
+        padding: 0 0.25rem;
+        column-gap: 0.25rem;
         button {
+            align-items: center;
             color: var(--shape);
-            background: transparent;
-            border: none;
-            font-size: 1.25rem;
+            font-size: 2rem;
             &:hover {
                 filter: brightness(0.8);
             }
         }
-        >div {
-            display: flex;
-            flex-direction: column;
-        }
     }
     
     >ul {
+        display: flex;
         max-width: 90vw;
 
-        display: flex;
         column-gap: 8px;
-
-        list-style: none; 
 
         padding: 1rem 1rem 0 1rem;
         overflow-x: scroll;
         &::-webkit-scrollbar {
             display: none;
         }
-        
         >li{
             >button {
                 padding: 1rem 2rem;
-                display: flex;
                 justify-content: center;
                 align-items: center;
 
                 border-radius: 15px 15px 0 0;
-                border: none;
 
                 background: var(--blue);
                 color: var(--shape);

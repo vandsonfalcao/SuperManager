@@ -1,81 +1,52 @@
-import { Container, Tab } from "./styles";
+import { useRef } from "react";
 import { RiEdit2Fill, RiAddCircleLine } from "react-icons/ri";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useState } from "react";
+
+import { Container, Tab } from "./styles";
 
 export default function Companies() {
-  const [point, setPoint] = useState(0);
-  function scrollRight() {
-    setPoint(point + 100);
-    document
-      .querySelector("#company-list")
-      ?.scroll({ left: point, behavior: "smooth" });
+  const companyListRef = useRef<HTMLUListElement>(null);
+
+  function toRoll(direction: boolean) {
+    const el = companyListRef.current;
+
+    const maxScroll = el ? el.scrollWidth - el.clientWidth : 0;
+    if (el) {
+      if (direction) {
+        if (el.scrollLeft < maxScroll) {
+          el.scroll({ left: el.scrollLeft + 100, behavior: "smooth" });
+        }
+      } else {
+        if (el.scrollLeft > 0) {
+          el.scroll({ left: el.scrollLeft - 100, behavior: "smooth" });
+        }
+      }
+    }
   }
-  function scrollLeft() {
-    setPoint(point - 100);
-    document
-      .querySelector("#company-list")
-      ?.scroll({ left: point, behavior: "smooth" });
-  }
+
   return (
     <Container>
       <Tab>
         <div>
-          <button onClick={scrollLeft}>
+          <button onClick={() => toRoll(false)}>
             <IoIosArrowBack />
           </button>
-          <div>
-            <button>
-              <RiEdit2Fill />
-            </button>
-            <button>
-              <RiAddCircleLine />
-            </button>
-          </div>
+          <button>
+            <RiEdit2Fill />
+          </button>
+          <button>
+            <RiAddCircleLine />
+          </button>
         </div>
-        <ul id="company-list">
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button className="selected">Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
+        <ul ref={companyListRef}>
+          {new Array(20).fill(0).map((_, idx) => (
+            <li key={idx}>
+              <button className={idx === 1 ? "selected" : ""}>Company </button>
+            </li>
+          ))}
         </ul>
         <div>
-          <button onClick={scrollRight}>
+          <button onClick={() => toRoll(true)}>
             <IoIosArrowForward />
           </button>
         </div>
