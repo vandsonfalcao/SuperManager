@@ -16,6 +16,7 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
     html{ 
+        scroll-behavior: smooth;
         @media (max-width: 1080px){
             font-size: 93.75%;
         }
@@ -45,6 +46,9 @@ export default createGlobalStyle`
     button { 
         cursor: pointer;
     }
+    a{
+        text-decoration: none;
+    }
     [disabled] {
         opacity: 0.6;
         cursor: not-allowed;
@@ -69,6 +73,16 @@ export default createGlobalStyle`
         100% {
             transform: translate(0,0);
             opacity: 1;
+        }
+    }
+    @keyframes resize-from-left {
+        0% {
+            overflow: hidden;
+            flex: 0;
+        }
+        100% {
+            overflow: visible;
+            flex: 1;
         }
     }
 `; 

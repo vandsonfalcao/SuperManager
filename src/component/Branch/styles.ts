@@ -2,21 +2,22 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     flex: 1;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-
-    //image + triangle
+    padding: 1rem 2rem;
     >div {
         display:flex;
-        >svg {
-            font-size: 15rem;
-            color: var(--blue);
+        justify-content: center;
+
+        @media screen and (max-width:900px){
+            flex-direction: column;
+            >section, >div ul svg{
+                display: none;
+            }
         }
+
         //triangle
         section {
-            margin-top:3rem;
             content: "";
+            margin-top: 5rem;;
             width: 0;
             height: 0;
             position: relative;
@@ -27,59 +28,60 @@ export const Container = styled.div`
             border-top: 35px solid transparent;
         }
     }
+    a, button{
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        color: #fff;
+        text-transform: uppercase;
+
+        &:hover {
+            filter: brightness(0.9);
+        }
+    }
 `;
 
-export const Detail = styled.form`
+export const ViewInfo = styled.div`
     padding: 1rem;
-    flex: 1;
     background: rgba(100, 100, 100, 0.1);
     border-radius: 20px;
-
-    >div {
-        margin-bottom: 0.5rem;
-        input[type="text"]{
-            padding: 0.5rem 1rem;
-            margin-bottom: 0.25rem;
-            background: transparent;
-            border: 0;
-            border-bottom: 3px solid #fff;
-            color: var(--dark-blue);
-        } 
-        input[type="text"].title {
-            font-size: 2rem;
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 0.25rem;
+        li:last-child{
+            display: flex;
+            flex-direction: row;
         }
-        svg {
-            color: var(--blue);
-            font-size: 2rem;
-        }  
-        label.target {
-            margin-left: 2rem;
-        }
-        button {
-            padding: 0.5rem 2rem;
-            border-radius: 10px;
-            color: #fff;
-            margin-right: 1rem;
-            &:hover {
-                filter: brightness(0.9);
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            column-gap: 1rem;
+            >svg {
+                font-size: 10rem;
+                color: var(--blue);
             }
-            &.bt-back {
-                background: var(--text);                
+            a, button {
+                display: flex;
+                align-items: center;
+                svg {
+                    color: #fff;
+                    font-size: 1rem;
+                    margin-right: 3px;
+                }
+                &.bt-back {
+                    background: var(--text);                
+                }
+                &.bt-edit {
+                    background: var(--blue);
+                }
             }
-            &.bt-edit {
-                background: var(--blue);
-            }
-            &.bt-save {
-                background: var(--green);
-            }
-            &.bt-cancel {
-                background: var(--red);
+            strong {
+                font-size: 2rem;
             }
         }
     }
-    
 `;
 
-export const Content = styled.div`
-    height: 200px;
-`;

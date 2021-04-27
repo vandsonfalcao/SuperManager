@@ -68,10 +68,6 @@ export const Content = styled.div`
             background-position: 220px 10px;
 
             transition: border 0.2s;
-            svg {
-                color: var(--dark-blue);
-                margin-right: 5px;
-            }
             h4{
                 color: var(--dark-blue);
                 display: inline-block;
@@ -102,4 +98,3 @@ export const Content = styled.div`
         }
     }
 `;
-

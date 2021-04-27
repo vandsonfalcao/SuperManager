@@ -1,7 +1,8 @@
-import { FiUsers } from "react-icons/fi";
-import { GiGears } from "react-icons/gi";
-
 import { Container, Content } from "./styles";
+
+interface BranchesProps {
+  setBranch: string;
+}
 
 export function Branches() {
   return (
@@ -13,7 +14,7 @@ export function Branches() {
           <button className="bt-add">Add</button>
         </div>
         <ul>
-          {new Array(4).fill(0).map((_, idx) => (
+          {new Array(10).fill(0).map((_, idx) => (
             <li key={idx}>
               <h4>Best Branch LTDA</h4>
               <div>
@@ -22,18 +23,12 @@ export function Branches() {
                 <p>(85) 9 8888-0000</p>
               </div>
               <div>
-                <div>
-                  <FiUsers />
-                  Employees: {24}
-                </div>
-                <div>
-                  <GiGears />
-                  Machines: {24}
-                </div>
-              </div>
-              <div>
-                <button>View</button>
-                <button disabled>Remove</button>
+                <button type="button" onClick={() => {}}>
+                  View
+                </button>
+                <button type="button" disabled>
+                  Remove
+                </button>
               </div>
             </li>
           ))}

@@ -9,7 +9,7 @@ export default function home() {
     <Container>
       <Header fullname="Vandson de Sousa Falcão" />
       <Companies />
-      {/* <Branches /> */}
+      <Branches />
       <Branch />
     </Container>
   );

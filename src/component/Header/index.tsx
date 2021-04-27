@@ -9,7 +9,7 @@ export default function Header({ fullname }: HeaderProps) {
   const arr = fullname.trim().split(" ");
   const newName = `${arr[0]} ${arr.length > 1 ? arr[arr.length - 1] : ""}`;
   return (
-    <Container>
+    <Container id="top">
       <div>
         <div>
           <BsGear />
