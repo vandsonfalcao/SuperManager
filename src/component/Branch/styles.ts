@@ -4,6 +4,19 @@ export const Container = styled.div`
     flex: 1;
     display:flex;
     padding: 1rem 2rem;
+
+    @media screen and (max-width: 720px){
+        flex-direction: column;
+        div:first-child ul {
+            border-radius: 20px 20px 0 0;
+        }
+        div:last-child {
+            border-radius: 0 0 20px 20px;
+        }
+        section {
+            display: none;
+        }
+    }
     
     //triangle
     section {

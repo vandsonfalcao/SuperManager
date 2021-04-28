@@ -3,6 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.div`
     max-width: 30%;
     padding: 1rem;
+
+    @media screen and (max-width: 1080px){
+        max-width: none;
+        flex: 1;
+    }
     a {
         display: block;
     }
@@ -39,7 +44,8 @@ export const Container = styled.div`
         max-height: 490px;
         overflow-y: scroll;
         color: var(--dark-blue);
-        tr {     
+        tr {
+            width: 100%;
             &:nth-child(2n) {
                 background: transparent;
             }
@@ -48,7 +54,7 @@ export const Container = styled.div`
             }
         }
         td {
-            max-width:80%;
+            width: 100%;
             text-align: center;
             vertical-align: middle;
             &:last-child {
@@ -57,7 +63,6 @@ export const Container = styled.div`
             button, a {
                 font-size: 0.813rem;
                 margin: 0.25rem;
-                width: 90%;
                 padding: 0.25rem;
             }
         }

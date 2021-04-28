@@ -13,4 +13,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     display: flex;
+    @media screen and (max-width: 1080px){
+        flex-direction: column;
+    }
 `;
