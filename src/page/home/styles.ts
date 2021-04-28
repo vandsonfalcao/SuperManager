@@ -7,7 +7,10 @@ export const Container = styled.div`
         list-style: none;
     }
     button {
-        background: transparent;
-        border: 0
+        border: 0;
     }
+`;
+
+export const Content = styled.div`
+    display: flex;
 `;

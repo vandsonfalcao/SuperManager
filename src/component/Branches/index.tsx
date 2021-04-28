@@ -1,39 +1,66 @@
-import { Container, Content } from "./styles";
+import { useState, useRef } from "react";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-interface BranchesProps {
-  setBranch: string;
-}
+import { Container, TableView, ToogleHidden } from "./styles";
 
 export function Branches() {
+  const tableViewRef = useRef<HTMLDivElement>(null);
+  const toogleViewRef = useRef<HTMLButtonElement>(null);
+  const [isShow, setIsShow] = useState(true);
+
+  function toogleHidden() {
+    if (isShow) {
+      tableViewRef.current?.classList.add("hidden");
+      toogleViewRef.current?.classList.add("bt-toogle");
+      setIsShow(!isShow);
+    } else {
+      tableViewRef.current?.classList.remove("hidden");
+      toogleViewRef.current?.classList.remove("bt-toogle");
+      setIsShow(!isShow);
+    }
+  }
+
   return (
-    <Container>
-      <Content>
+    <Container id="branchesWindow">
+      <TableView ref={tableViewRef}>
         <div>
-          <input type="text" placeholder="Search" />
-          <button className="bt-find">Find</button>
-          <button className="bt-add">Add</button>
+          <h3>Branches</h3>
         </div>
-        <ul>
+        <div>
+          <input type="text" placeholder="Search Branch" />
+          <button className="bt-add">Add Branch</button>
+        </div>
+        <table>
           {new Array(10).fill(0).map((_, idx) => (
-            <li key={idx}>
-              <h4>Best Branch LTDA</h4>
-              <div>
-                <p>branchlitda@email.com</p>
-                <p>(85) 9 8888-0000</p>
-                <p>(85) 9 8888-0000</p>
-              </div>
-              <div>
-                <button type="button" onClick={() => {}}>
+            <tr key={idx}>
+              <td>Best Branch LTDA</td>
+              <td>
+                <a href="#selectedBranch" type="button" onClick={() => {}}>
                   View
-                </button>
-                <button type="button" disabled>
-                  Remove
-                </button>
-              </div>
-            </li>
+                </a>
+                {idx === 3 ? (
+                  <button className="bt-remove-active" type="button">
+                    Remove
+                  </button>
+                ) : (
+                  <button type="button" disabled>
+                    Remove
+                  </button>
+                )}
+              </td>
+            </tr>
           ))}
-        </ul>
-      </Content>
+        </table>
+      </TableView>
+      <ToogleHidden>
+        <button
+          ref={toogleViewRef}
+          className="bt-hidden"
+          onClick={toogleHidden}
+        >
+          {isShow ? <IoIosArrowBack /> : <IoIosArrowForward />}
+        </button>
+      </ToogleHidden>
     </Container>
   );
 }

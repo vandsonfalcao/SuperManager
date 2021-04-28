@@ -96,7 +96,7 @@ export function Branch() {
             </li>
             <li>
               <a
-                href="#top"
+                href="#branchesWindow"
                 className="bt-back"
                 type="button"
                 onClick={handleBack}

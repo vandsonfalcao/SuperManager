@@ -10,6 +10,11 @@ export const Tab = styled.section`
     justify-content: space-between;
 
     background: var(--dark-blue);
+    button {
+        color: var(--shape);
+        background: transparent;
+
+    }
     >div {
         display: flex;
         align-items: center;
@@ -17,7 +22,6 @@ export const Tab = styled.section`
         column-gap: 0.25rem;
         button {
             align-items: center;
-            color: var(--shape);
             font-size: 2rem;
             &:hover {
                 filter: brightness(0.8);
@@ -45,7 +49,6 @@ export const Tab = styled.section`
                 border-radius: 15px 15px 0 0;
 
                 background: var(--blue);
-                color: var(--shape);
 
                 transition: transform 0.4s;
 
