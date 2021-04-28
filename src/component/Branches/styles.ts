@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     max-width: 30%;
-    padding: 1rem 0;
-    display: flex;
+    padding: 1rem;
     a {
         display: block;
     }
@@ -24,17 +23,6 @@ export const Container = styled.div`
             background: var(--red);
         }
     }
-    .hidden {
-        padding: 0;
-        overflow: hidden;
-        width: 0;
-    }
-`;
-
-export const TableView = styled.div`
-    width: 100%;
-    padding: 0 1rem 0 1rem;
-    transition: all 1.5s;
     h3 {
         color: var(--blue);
     }
@@ -72,16 +60,6 @@ export const TableView = styled.div`
                 width: 90%;
                 padding: 0.25rem;
             }
-        }
-    }
-`;
-export const ToogleHidden = styled.div`
-    button {
-        height: 100%;
-        border-radius: 5px 0 0 5px;
-        padding: 0.5rem; 
-        &.bt-toogle {
-            border-radius: 0 5px 5px 0;
         }
     }
 `;

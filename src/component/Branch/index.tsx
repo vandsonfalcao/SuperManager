@@ -1,6 +1,7 @@
 import { RiCommunityLine } from "react-icons/ri";
 import { FiUsers } from "react-icons/fi";
 import { GiGears } from "react-icons/gi";
+import { IoIosArrowUp } from "react-icons/io";
 
 import { EditBranch } from "../Edit/Branch";
 
@@ -8,9 +9,7 @@ import { Container, ViewInfo } from "./styles";
 import { useState } from "react";
 
 export function Branch() {
-  const [view, setView] = useState<"none" | "edit" | "employeers" | "devices">(
-    "none"
-  );
+  const [view, setView] = useState<"edit" | "employeers" | "devices">("edit");
   const branch = {
     name: "Best Branch LTDA",
     email: "bestbranchemail@email.com",
@@ -69,6 +68,13 @@ export function Branch() {
         <ViewInfo id="newBranchWindow">
           <ul>
             <li>
+              <h3>Selected Branch</h3>
+              <a href="#branchesWindow" className="bt-back" type="button">
+                <IoIosArrowUp />
+                Back
+              </a>
+            </li>
+            <li>
               <RiCommunityLine />
               <h2>Best Branch Name LTDA</h2>
               <div>Company - {"Name Companie"}</div>
@@ -93,24 +99,6 @@ export function Branch() {
                 <GiGears /> See Devices
               </button>
               <strong>{23}</strong>
-            </li>
-            <li>
-              <a
-                href="#branchesWindow"
-                className="bt-back"
-                type="button"
-                onClick={handleBack}
-              >
-                Back
-              </a>
-              <a
-                href="#newBranchWindow"
-                className="bt-edit"
-                type="button"
-                onClick={handleEdit}
-              >
-                Edit
-              </a>
             </li>
           </ul>
         </ViewInfo>

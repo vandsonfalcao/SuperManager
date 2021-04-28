@@ -5,7 +5,6 @@ export const Container = styled.div`
     padding: 1rem 2rem;
     >div {
         display:flex;
-        justify-content: center;
 
         @media screen and (max-width:900px){
             flex-direction: column;
@@ -44,21 +43,24 @@ export const ViewInfo = styled.div`
     padding: 1rem;
     background: rgba(100, 100, 100, 0.1);
     border-radius: 20px;
+
     ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        row-gap: 0.25rem;
-        li:last-child{
-            display: flex;
-            flex-direction: row;
-        }
+        row-gap: 1rem;
         li {
             display: flex;
             flex-direction: column;
             align-items: center;
-            column-gap: 1rem;
+            &:first-child {
+                display: flex;
+                flex-direction: row;
+                column-gap: 1rem;
+                align-self: flex-start;
+                color: var(--blue);
+            }
             >svg {
                 font-size: 10rem;
                 color: var(--blue);
@@ -72,6 +74,7 @@ export const ViewInfo = styled.div`
                     margin-right: 3px;
                 }
                 &.bt-back {
+                    display: none;
                     background: var(--text);                
                 }
                 &.bt-edit {
