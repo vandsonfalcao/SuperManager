@@ -64,46 +64,37 @@ export function Branch() {
 
   return (
     <Container>
-      <div>
-        <ViewInfo id="newBranchWindow">
-          <ul>
-            <li>
-              <h3>Selected Branch</h3>
-              <a href="#branchesWindow" className="bt-back" type="button">
-                <IoIosArrowUp />
-                Back
-              </a>
-            </li>
-            <li>
-              <RiCommunityLine />
-              <h2>Best Branch Name LTDA</h2>
-              <div>Company - {"Name Companie"}</div>
-              <div>CPNJ - {"87.478.451/00004-54"}</div>
-            </li>
-            <li>
-              <button
-                className="bt-edit"
-                type="button"
-                onClick={() => setView("employeers")}
-              >
-                <FiUsers /> See Employees
-              </button>
-              <strong>{55}</strong>
-            </li>
-            <li>
-              <button
-                className="bt-edit"
-                type="button"
-                onClick={() => setView("devices")}
-              >
-                <GiGears /> See Devices
-              </button>
-              <strong>{23}</strong>
-            </li>
-          </ul>
-        </ViewInfo>
-        {showView(view)}
-      </div>
+      <ViewInfo id="newBranchWindow">
+        <div>
+          <h3>Selected Branch</h3>
+          <a href="#branchesWindow" className="bt-back" type="button">
+            <IoIosArrowUp />
+            Back
+          </a>
+        </div>
+        <ul>
+          <li>
+            <RiCommunityLine />
+            <h2>Best Branch Name LTDA</h2>
+            <div>Company - {"Name Companie"}</div>
+            <div>CPNJ - {"87.478.451/00004-54"}</div>
+          </li>
+          <li>
+            <button type="button" onClick={() => setView("employeers")}>
+              <FiUsers /> See Employees
+            </button>
+            <strong>{55}</strong>
+          </li>
+          <li>
+            <button type="button" onClick={() => setView("devices")}>
+              <GiGears /> See Devices
+            </button>
+            <strong>{23}</strong>
+          </li>
+        </ul>
+      </ViewInfo>
+      <section></section>
+      {showView(view)}
     </Container>
   );
 }
