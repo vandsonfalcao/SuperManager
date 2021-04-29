@@ -8,13 +8,10 @@ export const Container = styled.div`
     animation: resize-from-left 1.5s ease-out;
 
     & ul {
-        margin: 0 auto;
-        max-width: 700px;
-        padding: 1rem;
+        max-width: 800px;
+        padding: 1.5rem;
         
-        li:not(:last-child) {
-            margin-bottom: 0.25rem;
-        }
+        
         li, label {
             padding: 0.25rem;
             font-weight: 300;
@@ -35,17 +32,9 @@ export const Container = styled.div`
                 border-bottom: 1px solid var(--dark-blue);
                 color: var(--dark-blue);
             }
-            input:disabled {
-                color: var(--blue);
-            } 
             button {
-                margin-right: 1rem;
-                &.bt-save {
-                    background: var(--green);
-                }
-                &.bt-cancel {
-                    background: var(--red);
-                }
+                margin-top: 2rem;
+                background: var(--green);
             }
         }
     }

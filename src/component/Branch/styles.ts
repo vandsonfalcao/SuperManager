@@ -46,7 +46,10 @@ export const Container = styled.div`
         }
         &.bt-back {
             display: none;
-            background: var(--text);                
+            background: var(--text);
+            @media screen and (max-width:720px){
+                display: block;
+            }             
         }
     }
 `;

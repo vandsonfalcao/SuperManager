@@ -4,6 +4,7 @@ import { Branches } from "../../component/Branches";
 import { Branch } from "../../component/Branch";
 
 import { Container, Content } from "./styles";
+import Employers from "../../component/Employers";
 
 export default function home() {
   return (
@@ -14,6 +15,7 @@ export default function home() {
         <Branches />
         <Branch />
       </Content>
+      <Employers />
     </Container>
   );
 }

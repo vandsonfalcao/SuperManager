@@ -24,8 +24,6 @@ interface EditBranchProps {
 export function EditBranch({ branch }: EditBranchProps) {
   function handleSubmit() {}
 
-  function handleCancel() {}
-
   return (
     <Container>
       <Form initialData={branch} onSubmit={handleSubmit}>
@@ -64,15 +62,7 @@ export function EditBranch({ branch }: EditBranchProps) {
           </Scope>
           <li className="ContainerButtons">
             <button disabled className="bt-save" type="submit">
-              Save
-            </button>
-            <button
-              disabled
-              className="bt-cancel"
-              type="button"
-              onClick={handleCancel}
-            >
-              Cancel
+              Update
             </button>
           </li>
         </ul>
