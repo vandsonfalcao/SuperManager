@@ -2,9 +2,9 @@ import Header from "../../component/Header/index";
 import Companies from "../../component/Companies/index";
 import { Branches } from "../../component/Branches";
 import { Branch } from "../../component/Branch";
+import Employees from "../../component/Employees";
 
 import { Container, Content } from "./styles";
-import Employers from "../../component/Employers";
 
 export default function home() {
   return (
@@ -15,7 +15,7 @@ export default function home() {
         <Branches />
         <Branch />
       </Content>
-      <Employers />
+      <Employees />
     </Container>
   );
 }

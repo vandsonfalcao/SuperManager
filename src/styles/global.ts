@@ -14,6 +14,19 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        ::-webkit-scrollbar {
+            width: 10px;
+        } 
+        ::-webkit-scrollbar-track {
+            background: rgba(37, 99, 235, 0.1); 
+        } 
+        ::-webkit-scrollbar-thumb {
+            background: rgba(37, 99, 235, 0.3);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(37, 99, 235);
+        }
     }
     html{ 
         scroll-behavior: smooth;

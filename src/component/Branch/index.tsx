@@ -25,7 +25,7 @@ export function Branch() {
 
   return (
     <Container>
-      <ViewInfo id="newBranchWindow">
+      <ViewInfo id="branchWindow">
         <div>
           <h3>Selected Branch</h3>
           <a href="#branchesWindow" className="bt-back" type="button">
@@ -42,7 +42,7 @@ export function Branch() {
           </li>
           <li>
             <button type="button">
-              <FiUsers /> See Employers
+              <FiUsers /> See Employees
             </button>
             <strong>{55}</strong>
           </li>

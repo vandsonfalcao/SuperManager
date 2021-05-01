@@ -25,7 +25,7 @@ export const Container = styled.div`
         width: 0;
         height: 0;
         position: relative;
-        border-right: 35px solid rgba(100, 100, 100, 0.1);
+        border-right: 35px solid var(--shape);
         border-bottom: 35px solid transparent;
         /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
         /*Aqui entra a cor da "aba" do balão */
